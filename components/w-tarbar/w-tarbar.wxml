@@ -1,0 +1,8 @@
+<!--components/w-tarbar/w-tarbar.wxml-->
+<view class="tarbar">
+<block wx:for="{{titles}}" wx:key="index">
+  <view class='tarbar-item ' bindtap="handleindex" data-index="{{index}}">
+   <text class='text {{currentindex === index? "active":""}}'>{{item}}</text>
+  </view>
+</block>
+</view>

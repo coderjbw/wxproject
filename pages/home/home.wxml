@@ -1,0 +1,4 @@
+<w-swiper list="{{banners}}"></w-swiper>
+<w-recommend recommends="{{recommends}}"></w-recommend>
+<w-popular></w-popular>
+<w-tarbar titles="{{titles}}" bind:handletabclick='handletabclick'></w-tarbar>
