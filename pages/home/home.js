@@ -1,6 +1,7 @@
 import {getmultidata,getgoodsdata} from "../../service/home"
 
 const goodstype = ['pop','new','sell']
+const Y = 1500
 
 Page({
 data:{
@@ -12,7 +13,11 @@ data:{
     'sell':{page:0,list:[]},
     'new':{page:0,list:[]}
   },
-  currenttype:"pop"
+  currenttype:"pop",
+  isshowbacktop:false,
+  isshowtarbar:false,
+  tarY:0,
+  istarshow:false
 },
 
 onLoad(options){
@@ -58,5 +63,30 @@ handletabclick(event){
   this.setData({
     currenttype:goodstype[index]
   })
+},
+// 下拉加载更多
+onReachBottom(){
+  this._getGoodsData(this.data.currenttype);
+},
+// 判断backtop显隐
+onPageScroll(options){
+  const scrolly = options.scrollTop;
+  let temp1 = scrolly>=Y;
+  if(temp1 != this.data.isshowbacktop){
+    this.setData({
+      isshowbacktop:temp1
+    })
+  }
+  let temp2 = scrolly>=this.data.tarY;
+  if(temp2 != this.data.istarshow){
+    this.setData({
+      istarshow:temp2
+    })
+  }
+},
+loadfinishimg(){
+  wx.createSelectorQuery().select('#wtarbar').boundingClientRect(function(rect){
+     this.data.tarY = rect.top
+  }).exec()
 }
 })

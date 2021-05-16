@@ -1,10 +1,15 @@
+<scroll-view>
 <!-- 轮播图 -->
 <w-swiper list="{{banners}}"></w-swiper>
 <!-- 推荐 -->
-<w-recommend recommends="{{recommends}}"></w-recommend>
+<w-recommend recommends="{{recommends}}" bind:loadfinishimg="loadfinishimg"></w-recommend>
 <!-- 本周流行 -->
 <w-popular></w-popular>
 <!-- 导航栏 -->
-<w-tarbar titles="{{titles}}" bind:handletabclick='handletabclick'></w-tarbar>
+<w-tarbar titles="{{titles}}" bind:handletabclick='handletabclick' id="wtarbar"></w-tarbar>
+<w-tarbar titles="{{titles}}" bind:handletabclick='handletabclick' wx:if="{{isshowtarbar}}" class="{{istarshow? 'tarbar':''}}"></w-tarbar>
 <!-- 商品栏 -->
 <w-goods goods="{{goods[currenttype].list}}"></w-goods>
+<!-- 回到顶部 -->
+<w-backtop wx:if="{{isshowbacktop}}"></w-backtop>
+</scroll-view>

@@ -2,6 +2,7 @@
 .tarbar{
   display: flex;
   margin-bottom: 10rpx;
+  background-color: #fff;
 }
 .tarbar-item{
   flex: 1;
