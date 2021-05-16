@@ -1,4 +1,10 @@
+<!-- 轮播图 -->
 <w-swiper list="{{banners}}"></w-swiper>
+<!-- 推荐 -->
 <w-recommend recommends="{{recommends}}"></w-recommend>
+<!-- 本周流行 -->
 <w-popular></w-popular>
+<!-- 导航栏 -->
 <w-tarbar titles="{{titles}}" bind:handletabclick='handletabclick'></w-tarbar>
+<!-- 商品栏 -->
+<w-goods goods="{{goods[currenttype].list}}"></w-goods>

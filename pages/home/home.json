@@ -2,6 +2,7 @@
   "usingComponents": {
     "w-swiper":"../../components/w-swiper/w-swiper",
     "w-tarbar":"../../components/w-tarbar/w-tarbar",
+    "w-goods":"../../components/w-goods/w-goods",
     "w-recommend":"./childrenCpns/w-recommend",
     "w-popular":"./childrenCpns/w-popular/w-popular"
   },

@@ -1,6 +1,7 @@
 /* components/w-tarbar/w-tarbar.wxss */
 .tarbar{
   display: flex;
+  margin-bottom: 10rpx;
 }
 .tarbar-item{
   flex: 1;
